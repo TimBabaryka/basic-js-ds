@@ -16,13 +16,20 @@ module.exports = class BinarySearchTree {
   return this.rootNode ? this.rootNode :null;
   }
 
-  add( data ) {
-   
+  add(data) {
+   this.rootNode = addNode(this.rootNode, data);
+    function addNode(node, data){
+      if(!node) {
+        return new node (data);
+      }
+      if(node.data ===data) {
+        return node;
+      }
+    }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has( data ) {
+   
   }
 
   find(/* data */) {

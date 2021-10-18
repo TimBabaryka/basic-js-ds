@@ -53,13 +53,30 @@ module.exports = class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (!this.rootNode) {
+      return;
+    }
+    let node  =this.rootNode;
+    while (node.right) {
+      node = node.right;
+    }
+    return node.data;
+   
+ 
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+    if (!this.rootNode) {
+      return;
+    }
+    let node  =this.rootNode;
+    while (node.left) {
+      node = node.left;
+    }
+    return node.data;
+
+    
   }
 
 }

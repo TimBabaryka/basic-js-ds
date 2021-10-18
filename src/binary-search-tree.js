@@ -20,11 +20,21 @@ module.exports = class BinarySearchTree {
    this.rootNode = addNode(this.rootNode, data);
     function addNode(node, data){
       if(!node) {
-        return new node (data);
+        return new Node(data);
       }
       if(node.data ===data) {
         return node;
       }
+      if(data < node.data) {
+        node.right = addNode(node.right, data);
+       
+        
+      } else {
+        node.left = addNode(node.left, data);
+        
+
+      }
+      return node;
     }
   }
 
